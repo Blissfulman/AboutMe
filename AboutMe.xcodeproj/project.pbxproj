@@ -14,8 +14,11 @@
 		CED9662B25434EF700656009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED9662A25434EF700656009 /* Assets.xcassets */; };
 		CED9662E25434EF700656009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED9662C25434EF700656009 /* LaunchScreen.storyboard */; };
 		CED9663B2543550100656009 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9663A2543550100656009 /* User.swift */; };
-		CED9663E2543614900656009 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9663D2543614900656009 /* MeViewController.swift */; };
+		CED9663E2543614900656009 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9663D2543614900656009 /* WelcomeViewController.swift */; };
 		CED96640254411C000656009 /* ViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9663F254411C000656009 /* ViewController + Extension.swift */; };
+		CED9664225449E9700656009 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9664125449E9700656009 /* GalleryViewController.swift */; };
+		CED966442544A71200656009 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED966432544A71200656009 /* GalleryCollectionViewCell.swift */; };
+		CED9664625458E2000656009 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9664525458E2000656009 /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +31,11 @@
 		CED9662D25434EF700656009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CED9662F25434EF700656009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED9663A2543550100656009 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		CED9663D2543614900656009 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		CED9663D2543614900656009 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CED9663F254411C000656009 /* ViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Extension.swift"; sourceTree = "<group>"; };
+		CED9664125449E9700656009 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		CED966432544A71200656009 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		CED9664525458E2000656009 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 			children = (
 				CED9662125434EF600656009 /* AppDelegate.swift */,
 				CED9662325434EF600656009 /* SceneDelegate.swift */,
+				CED966432544A71200656009 /* GalleryCollectionViewCell.swift */,
 				CED9663F254411C000656009 /* ViewController + Extension.swift */,
 				CED9662F25434EF700656009 /* Info.plist */,
 			);
@@ -95,7 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				CED9662525434EF600656009 /* LoginViewController.swift */,
-				CED9663D2543614900656009 /* MeViewController.swift */,
+				CED9663D2543614900656009 /* WelcomeViewController.swift */,
+				CED9664125449E9700656009 /* GalleryViewController.swift */,
+				CED9664525458E2000656009 /* PhotoViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -188,8 +197,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED96640254411C000656009 /* ViewController + Extension.swift in Sources */,
-				CED9663E2543614900656009 /* MeViewController.swift in Sources */,
+				CED966442544A71200656009 /* GalleryCollectionViewCell.swift in Sources */,
+				CED9664225449E9700656009 /* GalleryViewController.swift in Sources */,
+				CED9663E2543614900656009 /* WelcomeViewController.swift in Sources */,
 				CED9663B2543550100656009 /* User.swift in Sources */,
+				CED9664625458E2000656009 /* PhotoViewController.swift in Sources */,
 				CED9662625434EF600656009 /* LoginViewController.swift in Sources */,
 				CED9662225434EF600656009 /* AppDelegate.swift in Sources */,
 				CED9662425434EF600656009 /* SceneDelegate.swift in Sources */,

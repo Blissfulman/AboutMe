@@ -67,9 +67,17 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let tabBarController = segue.destination as! UITabBarController
-        let destinationVC = tabBarController.viewControllers?.first as!
-        MeViewController
+        
+        guard let destinationVC = tabBarController.viewControllers?.first as?
+            WelcomeViewController else { return }
         destinationVC.userName = userNameTextField.text ?? ""
+        
+        guard let navController = tabBarController.viewControllers?[1] as?
+            UINavigationController else { return }
+        guard let galleryVC = navController.viewControllers.first as?
+            GalleryViewController else { return }
+        galleryVC.name = User.getAutorizationData().name
+        galleryVC.surname = User.getAutorizationData().surname
     }
 }
 

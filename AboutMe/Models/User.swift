@@ -8,14 +8,18 @@
 
 import Foundation
 
-
 struct User {
     let name: String
     let password: String
 }
 
 extension User {
-    static func getAutorizationData() -> (name: String, password: String) {
-        return ("1", "1")
+    static func getAutorizationData() -> (name: String, surname: String, password: String) {
+        return ("Evgeny", "Novgorodov", "Go!")
+    }
+    
+    static func getNamesOfPhotos() -> [String] {
+        return ["image-1", "image-2", "image-3", "image-4",
+                "image-5", "image-6", "image-7", "image-8"]
     }
 }
