@@ -10,16 +10,18 @@ import Foundation
 
 struct User {
     let name: String
+    let surname: String
     let password: String
+    let namesOfPhotos: [String]
 }
 
 extension User {
-    static func getAutorizationData() -> (name: String, surname: String, password: String) {
-        return ("Evgeny", "Novgorodov", "Go!")
-    }
-    
-    static func getNamesOfPhotos() -> [String] {
-        return ["image-1", "image-2", "image-3", "image-4",
-                "image-5", "image-6", "image-7", "image-8"]
+    static func getUser() -> User {
+        return User(
+            name: "Evgeny",
+            surname: "Novgorodov",
+            password: "Go!",
+            namesOfPhotos: ["image-1", "image-2", "image-3", "image-4",
+                            "image-5", "image-6", "image-7", "image-8"])
     }
 }

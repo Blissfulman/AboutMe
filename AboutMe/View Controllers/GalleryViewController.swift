@@ -17,6 +17,7 @@ class GalleryViewController: UIViewController {
     // MARK: - Properties
     var name = ""
     var surname = ""
+    var namesOfPhotos = [String]()
     
     private var photos = [UIImage]()
     private let columnNumber: CGFloat = 3
@@ -44,7 +45,7 @@ class GalleryViewController: UIViewController {
     
     // MARK: - Private methods
     private func getPhotos() {
-        User.getNamesOfPhotos().forEach {
+        namesOfPhotos.forEach {
             if let image = UIImage(named: "\($0)") {
                 photos.append(image)
             }
