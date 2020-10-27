@@ -15,7 +15,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeStackView: UIStackView!
     
     // MARK: - Properties
-    var userName = ""
+    var user = User.getUser()
     
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class WelcomeViewController: UIViewController {
         gradientLayer.frame = view.frame
         view.layer.insertSublayer(gradientLayer, at: 0)
         
-        welcomeLabel.text = "Welcome, \(userName)!"
+        welcomeLabel.text = "Welcome, \(user.login)!"
     }
     
     // MARK: - Private methods

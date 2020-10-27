@@ -15,9 +15,7 @@ class GalleryViewController: UIViewController {
     @IBOutlet var galleryCollectionView: UICollectionView!
     
     // MARK: - Properties
-    var name = ""
-    var surname = ""
-    var namesOfPhotos = [String]()
+    var user: User!
     
     private var photos = [UIImage]()
     private let columnNumber: CGFloat = 3
@@ -38,14 +36,14 @@ class GalleryViewController: UIViewController {
     // MARK: - Setup UI
     private func setupUI() {
         titleLabel.text = """
-        Hi! I'm \(name) \(surname).
+        Hi! I'm \(user.person.fullName).
         This is my photo gallery.
         """
     }
     
     // MARK: - Private methods
     private func getPhotos() {
-        namesOfPhotos.forEach {
+        user.person.namesOfPhotos.forEach {
             if let image = UIImage(named: "\($0)") {
                 photos.append(image)
             }

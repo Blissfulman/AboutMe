@@ -28,8 +28,8 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        userNameTextField.text = ""
-        passwordTextField.text = ""
+        userNameTextField.text = nil
+        passwordTextField.text = nil
     }
     
     // MARK: - Actions
@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         guard let userName = userNameTextField.text,
             let password = passwordTextField.text else { return }
         
-        guard userName == user.name &&
+        guard userName == user.login &&
             password == user.password else {
                 
                 let title = "Invalid login or password"
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
                 
         let title = "Oooops!"
         let message = sender.tag == 0
-            ? "Your name is \"\(user.name)\""
+            ? "Your name is \"\(user.login)\""
             : "Your password is \"\(user.password)\""
         presentAlert(title: title, message: message)
     }
@@ -69,18 +69,12 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let tabBarController = segue.destination as! UITabBarController
+        let welcomeVC = tabBarController.viewControllers?.first as! WelcomeViewController
+        welcomeVC.user = user
         
-        guard let welcomeVC = tabBarController.viewControllers?.first as?
-            WelcomeViewController else { return }
-        welcomeVC.userName = user.name
-        
-        guard let navController = tabBarController.viewControllers?[1] as?
-            UINavigationController else { return }
-        guard let galleryVC = navController.viewControllers.first as?
-            GalleryViewController else { return }
-        galleryVC.name = user.name
-        galleryVC.surname = user.surname
-        galleryVC.namesOfPhotos = user.namesOfPhotos
+        let navigationVC = tabBarController.viewControllers?.last as! UINavigationController
+        let galleryVC = navigationVC.topViewController as! GalleryViewController
+        galleryVC.user = user
     }
 }
 
@@ -90,7 +84,6 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField == userNameTextField {
-            textField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
         } else {
             logInButtonPressed()
